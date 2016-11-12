@@ -1,4 +1,4 @@
-#pythonsheets.com code shippet 
+#pythonsheets.com code snippet 
 
 #1.Python Naming Rule-class
 #good: MyClass
