@@ -14,8 +14,10 @@ class consumer(Thread):
 
 		condition.acquire()
 		if len(items) == 0:
-			condition.wait()
 			print("Consumer notify : no item to consume")
+			print(time.localtime())
+			condition.wait()#block here until notify is called by another thread
+			print(time.localtime())			
 		items.pop()
 		print("Consumer notify : consumed 1 item")
 		print("Consumer notify : items to consume are "\
@@ -25,7 +27,7 @@ class consumer(Thread):
 
 	def run(self):
 		for i in range(0,20):
-			time.sleep(10)
+			time.sleep(3)
 			self.consume()
 
 class producer(Thread):
